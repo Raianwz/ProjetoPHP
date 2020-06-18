@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    background-color: #313131;
+}
+
+.nav-extended {
+    background-image: url("../imagens/arcade.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: soft-light;
+    /*Cor Sobre a Imagem com Efeito soft-light*/
+}
+
+nav ul li.active,
+.tab a.active {
+    border-bottom: solid 2px #76ff03;
+    background-color: transparent;
+}
+
+.nav-header h1 {
+    text-shadow: 2px 2px 15px #2979ff;
+}
+
+.nav-header h1 {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+img {
+    width: 5em;
+    height: 30em;
+}
