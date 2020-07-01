@@ -1,15 +1,19 @@
 <?php include "cabecalho.php" ?>
 <?php 
-$bd = new SQLite3("cartuchos.db");
-$sql = "SELECT * FROM cartuchos";
-$cartuchos = $bd->query($sql);
+session_start();
+
+require "./repository/JogosRepositoryPDO.php";
+require "./util/Mensagem.php";
+
+$jogoRepository =  new JogosRepositoryPDO();
+$cartuchos = $jogoRepository->listarTodos();
 ?>
 <body>
 <nav class="nav-extended grey darken-2">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right">
-                <li class="active"><a href="galeria.php">Galeria</a></li>
-                <li><a href="cadastrar.php">Cadastrar</a></li>
+                <li class="active"><a href="/">Galeria</a></li>
+                <li><a href="/novo">Cadastrar</a></li>
             </ul>
         </div>
         <div class="nav-header center">
@@ -27,27 +31,28 @@ $cartuchos = $bd->query($sql);
     
 <div class="row">
         <!-- Coluna Geral -->
-        <?php while($cartucho = $cartuchos->fetchArray()) :  ?>
+        <?php foreach($cartuchos as $cartucho) :  ?>
             <div class="col s3">
                 <div class="card hoverable">
                     <div class="card-image">
-                        <img src="<?= $cartucho["capa"] ?>">
+                        <img src="<?= $cartucho->capa ?>">
 
                         <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
                     </div>
                     <div class="card-content">
                         <p class="valign-wrapper">
-                            <i class="material-icons amber-text">star</i><?= $cartucho["nota"] ?>
+                            <i class="material-icons amber-text">star</i><?= $cartucho->nota ?>
                         </p>
-                        <span class="card-title"><?= $cartucho["titulo"] ?></span>
-                        <p><?= $cartucho["lore"] ?></p>
+                        <span class="card-title"><?= $cartucho->titulo ?></span>
+                        <p><?= $cartucho->lore ?></p>
                     </div>
                 </div>
             </div>
-        <?php endwhile ?>
+        <?php endforeach ?>
 
         <!--- Fim da Coluna Geral -->
     </div>
 
-
+        <?= Mensagem::mostrar(); ?>
 </body>
+</html>
