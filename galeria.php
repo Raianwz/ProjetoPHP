@@ -28,7 +28,7 @@ $cartuchos = $jogoRepository->listarTodos();
         </div>
     </nav>
 </body>
-    
+ <div class="container">  
 <div class="row">
         <!-- Coluna Geral -->
         <?php foreach($cartuchos as $cartucho) :  ?>
@@ -52,7 +52,7 @@ $cartuchos = $jogoRepository->listarTodos();
 
         <!--- Fim da Coluna Geral -->
     </div>
-
+    </div> 
         <?= Mensagem::mostrar(); ?>
 </body>
 </html>
