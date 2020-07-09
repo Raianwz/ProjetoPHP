@@ -19,7 +19,7 @@ class JogosRepositoryPDO {
         }
         return $jogosLista;
     }
-    public function salvar(Jogo $jogo):bool{
+    public function salvar($jogo):bool{
         $sql = "INSERT INTO cartuchos (titulo, capa, lore, nota) 
         VALUES(:titulo, :capa, :lore, :nota)";
 

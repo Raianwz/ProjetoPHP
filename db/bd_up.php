@@ -1,6 +1,6 @@
 <?php
 
-$bd = new SQLite3("cartuchos.db");
+$bd = new SQLite3("./db/cartuchos.db");
 
 $sql = "DROP TABLE IF EXISTS cartuchos";
 

@@ -1,12 +1,10 @@
-<?php include "cabecalho.php" ?>
+<?php include "view/cabecalho.php" ?>
 <?php 
-session_start();
-
-require "./repository/JogosRepositoryPDO.php";
+//session_start();
 require "./util/Mensagem.php";
 
-$jogoRepository =  new JogosRepositoryPDO();
-$cartuchos = $jogoRepository->listarTodos();
+$cotroller = new JogosController();
+$cartuchos = $cotroller->index();
 ?>
 <body>
 <nav class="nav-extended grey darken-2">
@@ -32,7 +30,7 @@ $cartuchos = $jogoRepository->listarTodos();
 <div class="row">
         <!-- Coluna Geral -->
         <?php foreach($cartuchos as $cartucho) :  ?>
-            <div class="col s3">
+            <div class="col s12 m6 l3">
                 <div class="card hoverable">
                     <div class="card-image">
                         <img src="<?= $cartucho->capa ?>">

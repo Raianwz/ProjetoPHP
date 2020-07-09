@@ -1,4 +1,4 @@
-<?php include "cabecalho.php" ?>
+<?php include "view/cabecalho.php" ?>
 
 <body>
 
@@ -22,7 +22,7 @@
     </nav>
 
     <div class="row">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="col s6 offset-s3">
                 <div class="card">
                     <div class="card-content">
@@ -59,7 +59,7 @@
                         <div class="file-field input-field">
                             <div class="btn blue accent-1 black-text">
                                 <span>Capa</span>
-                                <input type="file" name="capa">
+                                <input type="file" name="capa_file" accept="image/*">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Enviar Capa" name="capa">
