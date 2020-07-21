@@ -31,4 +31,26 @@ class JogosRepositoryPDO {
 
         return $stmt->execute();
     }
+
+    public function favoritar(int $id){
+        $sql = "UPDATE cartuchos SET favorito= NOT favorito WHERE id=:id";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        if($stmt->execute()){
+            return "ok";
+        }else{
+            return "erro";
+        }      
+    }
+
+    public function delete(int $id){
+        $sql = "DELETE FROM cartuchos WHERE id=:id";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        if($stmt->execute()){
+            return "ok";
+        }else{
+            return "erro";
+        }      
+    }
 }

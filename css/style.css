@@ -29,3 +29,8 @@ img {
     width: 5em;
     height: 30em;
 }
+
+.fadeOut {
+    opacity: 0;
+    transition: 1s;
+}
