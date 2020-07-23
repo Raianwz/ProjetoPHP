@@ -8,6 +8,10 @@ if($rota === "/"){
     require "view/galeria.php";
     exit();
 };
+if($rota === "/favoritos"){
+    require "view/favoritos.php";
+    exit();
+};
 
 if($rota === "/novo"){
     if($metodo == "GET") require "view/cadastrar.php";

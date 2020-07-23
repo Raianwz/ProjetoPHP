@@ -21,11 +21,10 @@ $cartuchos = $cotroller->index();
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a class="active" href="#todos">Todos</a></li>
                 <li class="tab"><a href="#jogados">Jogados</a></li>
-                <li class="tab"><a href="#favoritos">Favoritos</a></li>
+                <li class="tab"><a href="/favoritos">Favoritos</a></li>
             </ul>
         </div>
     </nav>
-</body>
  <div class="container">  
 <div class="row">
         <?php if (!$cartuchos) echo "<p class='card-panel red lighten-4'>Nenhum Jogo cadastrado no Cartucho</p>" ?>

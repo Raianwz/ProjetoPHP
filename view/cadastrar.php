@@ -14,9 +14,9 @@
         </div>
         <div class="nav-content black">
             <ul class="tabs tabs-transparent">
-                <li class="tab"><a class="active" href="#test1">Todos</a></li>
+                <li class="tab"><a class="active" href="/">Todos</a></li>
                 <li class="tab"><a href="#Jogados">Jogados</a></li>
-                <li class="tab"><a href="#Favoritos">Favoritos</a></li>
+                <li class="tab"><a href="/favoritos">Favoritos</a></li>
             </ul>
         </div>
     </nav>
